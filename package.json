@@ -1,5 +1,5 @@
 {
-  "name": "date-range",
+  "name": "date-range-selector",
   "version": "1.0.0",
   "description": "picker for range date",
   "main": "index.js",
