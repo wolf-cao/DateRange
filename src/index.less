@@ -1,0 +1,145 @@
+.pf-range-picker {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .pf-range-picker-top {
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    .pf-range-picker-button {
+      height: 42px;
+    }
+
+    .pf-range-picker-title {
+      font-size: 30px;
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  // range
+  .pf-date-range-year {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 102px;
+
+    .date-picker-month {
+      padding: 30px;
+
+      .date-picker-range-current-month {
+        font-size: 28px;
+      }
+
+      .date-picker-range-weeks {
+        display: flex;
+
+        .date-picker-range-week-item {
+          width: 100%;
+          height: 70px;
+          line-height: 70px;
+          font-size: 32px;
+          text-align: center;
+          color: #333;
+          background-color: #fff;
+        }
+      }
+
+      .date-picker-range-days-wrapper {
+        .date-picker-range-days {
+          display: flex;
+
+          .date-picker-range-day-item {
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            font-size: 32px;
+            text-align: center;
+            background-color: #fff;
+
+            &.date-picker-range-day-item-now-curr-month {
+              color: #ccc;
+            }
+
+            &.is-today {
+              background-color: #e1a35e;
+              color: #fff;
+            }
+
+            &.is-weekend {
+              color: #e1a35e;
+            }
+
+            &.start-day {
+              position: relative;
+
+              &:before {
+                content: '始';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 28px;
+                height: 28px;
+                background-color: #ff5f11;
+                font-size: 24px;
+                line-height: 28px;
+                color: #fff;
+                font-weight: 500;
+              }
+            }
+
+            &.end-day {
+              position: relative;
+
+              &:after {
+                content: '末';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 28px;
+                height: 28px;
+                background-color: #ff5f11;
+                font-size: 24px;
+                line-height: 28px;
+                color: #fff;
+                font-weight: 500;
+              }
+            }
+
+            &.between-day {
+              background-color: #3d8ede;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pf-range-picker-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(100%);
+
+  &.is-range-picker-visible {
+    transform: translateY(0);
+  }
+}
